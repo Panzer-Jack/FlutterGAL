@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 class HomeBtn extends StatelessWidget {
-  const HomeBtn({key, @required this.text, @required this.iconName})
+  const HomeBtn(
+      {key, @required this.text, @required this.iconName, this.onPressed})
       : super(key: key);
   final String text;
   final IconData iconName;
+  final GestureTapCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +17,7 @@ class HomeBtn extends StatelessWidget {
         height: 200,
         width: 200,
         child: ElevatedButton(
-          onPressed: () {
-            print('111');
-          },
+          onPressed: onPressed,
           style: ButtonStyle(
             backgroundColor:
                 MaterialStateProperty.all(Color.fromRGBO(200, 200, 200, 0.2)),

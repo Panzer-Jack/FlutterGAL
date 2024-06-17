@@ -1,29 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_gal/pages/home/widgets/home_btn.dart';
+import 'package:flutter_gal/router/router.dart';
 
 class HomePage extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: '导航',
-      themeMode: ThemeMode.dark,
-      darkTheme: ThemeData(
-        colorScheme: const ColorScheme.dark(),
-        appBarTheme:
-            AppBarTheme(systemOverlayStyle: SystemUiOverlayStyle.light),
-      ),
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: _HomePage(),
-    );
-  }
-}
-
-class _HomePage extends StatelessWidget {
-  const _HomePage({key}) : super(key: key);
+  const HomePage({key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -42,10 +22,30 @@ class _HomePage extends StatelessWidget {
               Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    HomeBtn(text: 'Editor', iconName: Icons.edit),
-                    HomeBtn(text: 'Setting', iconName: Icons.settings),
-                    HomeBtn(text: 'Document', iconName: Icons.book),
-                    HomeBtn(text: 'Stars', iconName: Icons.star),
+                    HomeBtn(
+                        text: 'Editor',
+                        iconName: Icons.edit,
+                        onPressed: () {
+                          MyRouter.pushNoParams(context, MyRouter.editorPage);
+                        }),
+                    HomeBtn(
+                        text: 'Setting',
+                        iconName: Icons.settings,
+                        onPressed: () {
+                          MyRouter.pushNoParams(context, MyRouter.settingPage);
+                        }),
+                    HomeBtn(
+                        text: 'Document',
+                        iconName: Icons.book,
+                        onPressed: () {
+                          print('123');
+                        }),
+                    HomeBtn(
+                        text: 'Stars',
+                        iconName: Icons.star,
+                        onPressed: () {
+                          print('123');
+                        }),
                   ])
             ]),
       ),
