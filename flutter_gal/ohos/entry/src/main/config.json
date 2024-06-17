@@ -1,0 +1,66 @@
+{
+  "app": {
+    "bundleName": "com.example.ohos.flutter_gal",
+    "vendor": "example",
+    "version": {
+      "code": 1000000,
+      "name": "1.0.0"
+    }
+  },
+  "deviceConfig": {},
+  "module": {
+    "package": "com.example.ohos.flutter_gal",
+    "mainAbility": ".MainAbility",
+    "name": ".MainApplication",
+    "deviceType": [
+      "default",
+      "phone",
+      "car",
+      "tablet",
+      "tv",
+      "wearable"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "entry",
+      "moduleType": "entry",
+      "installationFree": false
+    },
+    "abilities": [
+      {
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ],
+        "name": ".MainAbility",
+        "label": "$string:flutter_gal",
+        "icon": "$media:icon",
+        "type": "page",
+        "launchType": "singleton",
+        "orientation": "unspecified",
+        "configChanges": ["density", "fontSize", "layout", "locale", "orientation", "size", "smallestSize"],
+        "metaData": {
+          "customizeData": [
+            {
+              "name": "hwc-theme",
+              "value": "androidhwext:style/Theme.Emui.Light.NoTitleBar",
+              "extra": ""
+            }
+          ]
+        }
+      }
+    ],
+    "reqPermissions": [
+      {
+        "name": "ohos.permission.INTERNET",
+        "reason": "Flutter Debugger"
+      }
+    ]
+  }
+}
