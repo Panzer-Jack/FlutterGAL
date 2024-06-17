@@ -5,6 +5,6 @@
 
 version:
   revision: 864e29eae5843a77243b02cbf5d569001452f60b
-  channel: unknown
+  channel: mt-stable
 
 project_type: app
